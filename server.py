@@ -13,11 +13,13 @@ while True:
     recvmsg = data.decode('utf-8')
 
     if recvmsg == 'exit!':
-        print("Другой участник добровольно закончил чат с тобой, пока!")
-        break
+        print("Участник" + str(addr) + "добровольно закончил чат с тобой, пока!")
+        continue
+    elif recvmsg == 'login!':
+        print("Пользователь " + str(addr) + " регистрируется")
 
-    print('client msg: ' + recvmsg)
-    replymsg = input('Ответить:')
+    print(str(addr) + ' client msg: ' + recvmsg)
+    replymsg = input('Ответить: ')
 
     fwq.sendto(replymsg.encode('utf-8'), addr)
 

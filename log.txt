@@ -1,0 +1,4 @@
+login passwd
+user1 passwd1234
+admin passwd
+user1234 pass1234
